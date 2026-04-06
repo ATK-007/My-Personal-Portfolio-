@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmakuri Ashish — Cybersecurity Portfolio</title>
+  <meta name="description" content="Atmakuri Ashish — Security Analyst & Penetration Tester. CEH & CCNA certified. Explore my cybersecurity projects, skills, and experience in an immersive 3D portfolio." />
+  <meta name="keywords" content="cybersecurity, penetration testing, security analyst, CEH, CCNA, portfolio, Atmakuri Ashish" />
+  <meta property="og:title" content="Atmakuri Ashish — Cybersecurity Portfolio" />
+  <meta property="og:description" content="Security Analyst & Penetration Tester | CEH & CCNA Certified" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============ MATRIX RAIN CANVAS ============ -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div class="loader" id="loader">
+    <div class="loader-terminal">
+      <div class="loader-header">
+        <span class="loader-dot red"></span>
+        <span class="loader-dot yellow"></span>
+        <span class="loader-dot green"></span>
+        <span class="loader-title">root@atk-007:~$</span>
+      </div>
+      <div class="loader-body">
+        <p class="loader-line" style="--delay:0">> Initializing secure connection...</p>
+        <p class="loader-line" style="--delay:1">> Loading 3D cybersecurity environment...</p>
+        <p class="loader-line" style="--delay:2">> Decrypting portfolio data...</p>
+        <p class="loader-line" style="--delay:3">> Establishing encrypted tunnel...</p>
+        <p class="loader-line done" style="--delay:4">> Access Granted ✓</p>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-bracket">&lt;</span>ATK<span class="nav-logo-slash">/</span>007<span class="nav-logo-bracket">&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-text="About">About</a></li>
+      <li><a href="#skills" data-text="Skills">Skills</a></li>
+      <li><a href="#experience" data-text="Experience">Experience</a></li>
+      <li><a href="#projects" data-text="Projects">Projects</a></li>
+      <li><a href="#certifications" data-text="Certs">Certs</a></li>
+      <li><a href="#education" data-text="Education">Education</a></li>
+      <li><a href="#contact" data-text="Contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div id="hero-3d-canvas"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>CEH &amp; CCNA Certified</span>
+      </div>
+      <h1 class="hero-name" data-text="ATMAKURI ASHISH">
+        <span class="hero-name-line">ATMAKURI</span>
+        <span class="hero-name-line accent">ASHISH</span>
+      </h1>
+      <div class="hero-terminal">
+        <span class="terminal-prompt">root@atk:~$</span>
+        <span class="terminal-text" id="typingText"></span>
+        <span class="terminal-cursor">▊</span>
+      </div>
+      <p class="hero-subtitle">Security Analyst &bull; SOC Analyst &bull; Penetration Tester &bull; Vulnerability Analyst &bull; Incident Responder</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <span class="btn-icon">⚡</span> View My Work
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span class="btn-icon">📡</span> Get In Touch
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="2">0</span>
+          <span class="hero-stat-label">Internships</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="8">0</span>
+          <span class="hero-stat-label">Key Projects</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="8">0</span>
+          <span class="hero-stat-label">Certifications</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="8.53">0</span>
+          <span class="hero-stat-label">CGPA Score</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;about&gt;</span>
+        <h2 class="section-title glitch" data-text="About Me">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <div class="about-image-frame">
+            <img src="assets/profile.jpg" alt="Atmakuri Ashish" class="about-image" />
+            <div class="about-image-border"></div>
+            <div class="about-image-corner tl"></div>
+            <div class="about-image-corner tr"></div>
+            <div class="about-image-corner bl"></div>
+            <div class="about-image-corner br"></div>
+          </div>
+          <div class="about-image-glitch"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">ashish@kali:~/about$</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="cmd">cat</span> <span class="file">summary.txt</span></p>
+              <p class="terminal-output">BCA graduate (CGPA 8.53) with hands-on cybersecurity experience across <span class="highlight">SOC operations</span>, penetration testing, SIEM monitoring, vulnerability assessment, and incident response.</p>
+              <p class="terminal-output">Holds <span class="highlight">CEH</span> and <span class="highlight">CCNA</span> certifications. Completed two cybersecurity internships including SOC analyst and security engineering roles.</p>
+              <p class="terminal-output">Proficient in Burp Suite, Nmap, Metasploit, Wireshark, Splunk, Python, and Bash. Active practitioner on <span class="highlight">TryHackMe</span> and <span class="highlight">HackTheBox</span>.</p>
+              <p class="terminal-output">Targeting entry-level roles: <span class="highlight">Security Analyst, SOC Analyst, Penetration Tester, Vulnerability Analyst, Incident Responder</span>. Immediate joiner, open to relocation across India.</p>
+            </div>
+          </div>
+          <div class="about-info-grid">
+            <div class="about-info-card">
+              <span class="about-info-icon">📍</span>
+              <span class="about-info-label">Location</span>
+              <span class="about-info-value">Berhampur, Odisha</span>
+            </div>
+            <div class="about-info-card">
+              <span class="about-info-icon">🎓</span>
+              <span class="about-info-label">Degree</span>
+              <span class="about-info-value">BCA — Sri Sri University</span>
+            </div>
+            <div class="about-info-card">
+              <span class="about-info-icon">💼</span>
+              <span class="about-info-label">Status</span>
+              <span class="about-info-value">Immediate Joiner</span>
+            </div>
+            <div class="about-info-card">
+              <span class="about-info-icon">🌐</span>
+              <span class="about-info-label">Work Mode</span>
+              <span class="about-info-value">Onsite / Hybrid / Remote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/about&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;skills&gt;</span>
+        <h2 class="section-title glitch" data-text="Core Skills">Core Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div id="skills-3d-canvas" class="skills-3d-canvas"></div>
+      <div class="skills-grid">
+        <!-- Security & Pentesting -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">🛡️</span></div>
+            <h3>Security &amp; Pentesting</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="90">Burp Suite</span>
+            <span class="skill-tag" data-level="85">Nmap</span>
+            <span class="skill-tag" data-level="80">Metasploit</span>
+            <span class="skill-tag" data-level="88">OWASP Top 10</span>
+            <span class="skill-tag" data-level="82">Vuln Assessment</span>
+            <span class="skill-tag" data-level="78">Wireshark</span>
+            <span class="skill-tag" data-level="72">Snort / IDS-IPS</span>
+            <span class="skill-tag" data-level="70">DIVA / DVWA</span>
+          </div>
+        </div>
+        <!-- SOC & Incident Response -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">🔍</span></div>
+            <h3>SOC &amp; Incident Response</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="82">SIEM (Splunk/ELK)</span>
+            <span class="skill-tag" data-level="78">Log Analysis</span>
+            <span class="skill-tag" data-level="75">Incident Response</span>
+            <span class="skill-tag" data-level="72">Threat Intelligence</span>
+            <span class="skill-tag" data-level="70">Alert Triage</span>
+            <span class="skill-tag" data-level="68">MITRE ATT&amp;CK</span>
+            <span class="skill-tag" data-level="65">Malware Analysis</span>
+            <span class="skill-tag" data-level="72">Digital Forensics</span>
+          </div>
+        </div>
+        <!-- Programming -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">💻</span></div>
+            <h3>Programming &amp; Scripting</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="88">Python</span>
+            <span class="skill-tag" data-level="80">Bash / Shell</span>
+            <span class="skill-tag" data-level="75">HTML/CSS/JS</span>
+            <span class="skill-tag" data-level="70">SQLite</span>
+            <span class="skill-tag" data-level="65">PowerShell</span>
+            <span class="skill-tag" data-level="60">Regex</span>
+          </div>
+        </div>
+        <!-- Cloud -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">☁️</span></div>
+            <h3>Cloud &amp; Infrastructure</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="75">AWS (EC2, Lambda)</span>
+            <span class="skill-tag" data-level="72">Docker</span>
+            <span class="skill-tag" data-level="65">Kubernetes</span>
+            <span class="skill-tag" data-level="70">Prometheus</span>
+            <span class="skill-tag" data-level="72">Grafana</span>
+            <span class="skill-tag" data-level="68">CloudWatch</span>
+          </div>
+        </div>
+        <!-- OS & Platforms -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">🐧</span></div>
+            <h3>OS &amp; Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="90">Kali Linux</span>
+            <span class="skill-tag" data-level="85">Ubuntu</span>
+            <span class="skill-tag" data-level="80">Windows</span>
+            <span class="skill-tag" data-level="78">TryHackMe</span>
+            <span class="skill-tag" data-level="75">HackTheBox</span>
+          </div>
+        </div>
+        <!-- Networking -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">🌐</span></div>
+            <h3>Networking &amp; Protocols</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="85">TCP/IP</span>
+            <span class="skill-tag" data-level="80">DNS / DHCP</span>
+            <span class="skill-tag" data-level="78">Firewall Config</span>
+            <span class="skill-tag" data-level="75">VPN / Tunneling</span>
+            <span class="skill-tag" data-level="72">Subnetting</span>
+            <span class="skill-tag" data-level="70">HTTP/S Analysis</span>
+          </div>
+        </div>
+        <!-- Cryptography & Data Protection -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">🔐</span></div>
+            <h3>Crypto &amp; Data Security</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="80">Encryption (AES/RSA)</span>
+            <span class="skill-tag" data-level="75">Hashing (SHA/MD5)</span>
+            <span class="skill-tag" data-level="70">PKI / Certificates</span>
+            <span class="skill-tag" data-level="72">Steganography</span>
+          </div>
+        </div>
+        <!-- Compliance & Governance -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-icon-wrap"><span class="skill-icon">📋</span></div>
+            <h3>Compliance &amp; Governance</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="85">NIST Framework</span>
+            <span class="skill-tag" data-level="78">ISO 27001</span>
+            <span class="skill-tag" data-level="70">GDPR Compliance</span>
+            <span class="skill-tag" data-level="75">Risk Assessment</span>
+          </div>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/skills&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;experience&gt;</span>
+        <h2 class="section-title glitch" data-text="Experience">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-marker-dot"></div>
+            <div class="timeline-marker-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Technical Intern — Security Systems Engineering</h3>
+              <span class="timeline-company">NIIT Foundation</span>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-date">📅 Dec 2025 – Feb 2026</span>
+              <span class="timeline-location">📡 Remote</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Conducted structured penetration testing across <span class="highlight">10+ web application</span> scenarios daily — identified critical vulnerabilities, performed root-cause analysis, and documented findings with full reproduction steps.</li>
+              <li>Discovered and resolved <span class="highlight">8 critical security defects</span> through systematic investigation; coordinated remediation with stakeholders and validated fixes via structured retesting.</li>
+              <li>Developed <span class="highlight">Python automation scripts</span> for data collection, classification, and reporting — significantly reduced manual effort and improved consistency across operational cycles.</li>
+              <li>Produced weekly/monthly status reports for technical and non-technical stakeholders, maintaining professional documentation standards throughout.</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Python</span><span>Burp Suite</span><span>Nmap</span><span>OWASP</span><span>Bash</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-marker-dot"></div>
+            <div class="timeline-marker-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Cybersecurity Analyst Intern</h3>
+              <span class="timeline-company">Uptoskills</span>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-date">📅 Mar 2024 – Jun 2024</span>
+              <span class="timeline-location">📍 Delhi, India</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Monitored security events and alerts through <span class="highlight">SIEM dashboards (Splunk)</span>, performing real-time alert triage and escalation of critical incidents across the organization's infrastructure.</li>
+              <li>Conducted <span class="highlight">vulnerability assessments</span> on web applications and internal networks using Nmap, Nessus, and Burp Suite — documented findings with CVSS scoring and remediation recommendations.</li>
+              <li>Assisted in <span class="highlight">incident response procedures</span> including log analysis, threat containment, evidence collection, and post-incident documentation following NIST framework guidelines.</li>
+              <li>Performed <span class="highlight">network traffic analysis</span> using Wireshark to detect anomalies, identify potential intrusions, and correlate events for comprehensive threat intelligence reporting.</li>
+              <li>Contributed to <span class="highlight">security awareness training</span> materials and phishing simulation campaigns, helping reduce organization-wide click rates by educating employees on social engineering tactics.</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Splunk</span><span>Wireshark</span><span>Nessus</span><span>Nmap</span><span>NIST</span><span>MITRE ATT&CK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/experience&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;projects&gt;</span>
+        <h2 class="section-title glitch" data-text="Key Projects">Key Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🔐</div>
+            <span class="project-year">2025</span>
+          </div>
+          <h3 class="project-title">Security Automation &amp; Validation Framework</h3>
+          <p class="project-desc">Built Python-based security automation framework — designed test logic, executed 20+ scenarios, identified 8 defects with remediation recommendations, and maintained structured knowledge repositories.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Splunk</span><span>ELK Stack</span><span>Bash</span><span>Linux</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🌐</div>
+            <span class="project-year">2025</span>
+          </div>
+          <h3 class="project-title">NetWise — Full-Stack Web Application</h3>
+          <p class="project-desc">Designed and developed full-stack web app from requirements through deployment — implemented front-end, back-end, and database layers with manual/automated testing and structured debugging.</p>
+          <div class="project-tech">
+            <span>Python</span><span>HTML/CSS/JS</span><span>SQLite</span><span>Ubuntu</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">📊</div>
+            <span class="project-year">2025</span>
+          </div>
+          <h3 class="project-title">Cloud Infrastructure Monitoring Lab</h3>
+          <p class="project-desc">Configured AWS infrastructure, automated monitoring workflows using Python boto3, validated system behaviour, and documented cloud security findings and performance metrics.</p>
+          <div class="project-tech">
+            <span>Python boto3</span><span>AWS CloudWatch</span><span>Prometheus</span><span>Grafana</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🖥️</div>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-title">SOC Monitoring &amp; Alert Dashboard</h3>
+          <p class="project-desc">Built a real-time SOC monitoring dashboard with Splunk SIEM integration — configured custom alert rules, log correlation, threat detection use-cases, and automated incident ticket generation for L1/L2 triage.</p>
+          <div class="project-tech">
+            <span>Splunk</span><span>Python</span><span>ELK Stack</span><span>MITRE ATT&CK</span><span>Syslog</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🔍</div>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-title">Automated Vulnerability Scanner &amp; Reporter</h3>
+          <p class="project-desc">Developed a Python-based vulnerability scanning tool that automates Nmap scans, integrates with CVE databases, and generates detailed PDF reports with CVSS scoring, risk ratings, and remediation steps.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Nmap</span><span>CVE API</span><span>Bash</span><span>ReportLab</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🎣</div>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-title">Phishing Simulation &amp; Awareness Platform</h3>
+          <p class="project-desc">Created an internal phishing simulation tool to test employee security awareness — designed realistic email templates, tracked click rates, and generated campaign analytics dashboards with improvement metrics.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Flask</span><span>HTML/CSS/JS</span><span>SQLite</span><span>SMTP</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 7 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🕸️</div>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-title">Packet Sniffer &amp; Network Analyzer</h3>
+          <p class="project-desc">Developed a customized packet sniffing tool to capture, parse, and analyze raw network traffic in real-time. Features include protocol filtering (TCP/UDP/ICMP), payload inspection, and logging for forensic analysis.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Scapy</span><span>Socket</span><span>TCP/IP</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <!-- Project 8 -->
+        <div class="project-card" data-tilt>
+          <div class="project-card-glow"></div>
+          <div class="project-card-header">
+            <div class="project-icon">🏢</div>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-title">Active Directory Pentesting Lab</h3>
+          <p class="project-desc">Built a virtualized Active Directory environment to practice and document various AD attacks including Kerberoasting, AS-REP Roasting, Pass-the-Hash, and Golden Ticket creation within a controlled network.</p>
+          <div class="project-tech">
+            <span>Windows Server</span><span>BloodHound</span><span>Mimikatz</span><span>Impacket</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/projects&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;certifications&gt;</span>
+        <h2 class="section-title glitch" data-text="Certifications">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card cert-primary">
+          <div class="cert-badge">🏆</div>
+          <h3>CEH</h3>
+          <p>Certified Ethical Hacker</p>
+          <span class="cert-status active">Active</span>
+        </div>
+        <div class="cert-card cert-primary">
+          <div class="cert-badge">🏆</div>
+          <h3>CCNA</h3>
+          <p>Cisco Certified Network Associate</p>
+          <span class="cert-status active">Active</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">📜</div>
+          <h3>Intro to Cybersecurity</h3>
+          <p>Cisco Networking Academy</p>
+          <span class="cert-status completed">Completed</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">📜</div>
+          <h3>Security Operations Fundamentals</h3>
+          <p>Microsoft Learn</p>
+          <span class="cert-status completed">Completed</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">📜</div>
+          <h3>Digital Forensics</h3>
+          <p>Great Learning Academy</p>
+          <span class="cert-status completed">Completed</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">📜</div>
+          <h3>HackTheBox Academy</h3>
+          <p>Linux, App Testing, Network Analysis</p>
+          <span class="cert-status active">Active</span>
+        </div>
+      </div>
+      <div class="certs-pursuing">
+        <h3 class="certs-pursuing-title">🎯 Currently Pursuing</h3>
+        <div class="certs-pursuing-list">
+          <span class="cert-pursuing-tag">CompTIA Security+</span>
+          <span class="cert-pursuing-tag">AWS Cloud Practitioner</span>
+          <span class="cert-pursuing-tag">CompTIA Network+</span>
+          <span class="cert-pursuing-tag">PCEP</span>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/certifications&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;education&gt;</span>
+        <h2 class="section-title glitch" data-text="Education">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card edu-primary">
+          <img src="assets/srisri.png" alt="Sri Sri University" class="edu-icon-img" />
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p class="edu-school">Sri Sri University, Cuttack</p>
+          <div class="edu-meta">
+            <span>2023 – 2026</span>
+            <span class="edu-score">CGPA: <strong>8.53</strong></span>
+          </div>
+          <span class="edu-status">Completed — No Arrears</span>
+        </div>
+        <div class="edu-card">
+          <img src="assets/tnboard.png" alt="TN State Board" class="edu-icon-img" />
+          <h3>Senior Secondary (12th)</h3>
+          <p class="edu-school">TN State Board</p>
+          <div class="edu-meta">
+            <span>2023</span>
+            <span class="edu-score"><strong>78.5%</strong></span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <img src="assets/dav.png" alt="DAV Public School" class="edu-icon-img" />
+          <h3>Secondary (10th)</h3>
+          <p class="edu-school">DAV Public School</p>
+          <div class="edu-meta">
+            <span>2021</span>
+            <span class="edu-score"><strong>75.6%</strong></span>
+          </div>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/education&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;contact&gt;</span>
+        <h2 class="section-title glitch" data-text="Get In Touch">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>Interested in working together or have a cybersecurity challenge? Drop me a message!</p>
+          <div class="contact-cards">
+            <a href="mailto:ashishatmakuri05@gmail.com" class="contact-card-item">
+              <span class="contact-card-icon">📧</span>
+              <div>
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">ashishatmakuri05@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+917064936270" class="contact-card-item">
+              <span class="contact-card-icon">📱</span>
+              <div>
+                <span class="contact-card-label">Phone</span>
+                <span class="contact-card-value">+91 7064936270</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/atmakuri-ashish" target="_blank" rel="noopener" class="contact-card-item">
+              <span class="contact-card-icon">💼</span>
+              <div>
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">atmakuri-ashish</span>
+              </div>
+            </a>
+            <a href="https://github.com/ATK-007" target="_blank" rel="noopener" class="contact-card-item">
+              <span class="contact-card-icon">🐙</span>
+              <div>
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">ATK-007</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contactSubmit">
+            <span class="btn-icon">🚀</span> Send Message
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+      <span class="section-tag-close">&lt;/contact&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="nav-logo-bracket">&lt;</span>ATK<span class="nav-logo-slash">/</span>007<span class="nav-logo-bracket">&gt;</span>
+        </div>
+        <p class="footer-text">Designed &amp; built by <strong>Atmakuri Ashish</strong> &bull; Cybersecurity Portfolio &copy; 2025</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/atmakuri-ashish" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+          <a href="https://github.com/ATK-007" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+          <a href="mailto:ashishatmakuri05@gmail.com" aria-label="Email">📧</a>
+        </div>
+      </div>
+      <div class="footer-visitors">
+        <span>Visitors: </span><span id="visitorCount">—</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
