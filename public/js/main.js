@@ -361,7 +361,7 @@ window.addEventListener('load', () => {
 // ==================== SCROLL REVEAL ====================
 (function initReveal() {
   const revealElements = document.querySelectorAll(
-    '.skill-category, .project-card, .cert-card, .edu-card, .timeline-item, .about-terminal, .about-info-card, .contact-card-item, .certs-pursuing'
+    '.skill-category, .project-card, .lab-card, .cert-card, .edu-card, .timeline-item, .about-terminal, .about-info-card, .contact-card-item, .certs-pursuing'
   );
 
   revealElements.forEach((el) => el.classList.add('reveal'));

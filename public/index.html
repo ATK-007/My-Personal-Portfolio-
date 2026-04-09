@@ -65,6 +65,7 @@
       <li><a href="#skills" data-text="Skills">Skills</a></li>
       <li><a href="#experience" data-text="Experience">Experience</a></li>
       <li><a href="#projects" data-text="Projects">Projects</a></li>
+      <li><a href="#labs" data-text="Labs">Labs</a></li>
       <li><a href="#certifications" data-text="Certs">Certs</a></li>
       <li><a href="#education" data-text="Education">Education</a></li>
       <li><a href="#contact" data-text="Contact" class="nav-cta">Contact</a></li>
@@ -111,8 +112,8 @@
           <span class="hero-stat-label">Certifications</span>
         </div>
         <div class="hero-stat">
-          <div>
-            <span class="hero-stat-number" data-count="10">0</span><span style="font-size: 2.5rem; font-family: var(--font-display); font-weight: 700; color: var(--text-primary);">+</span>
+          <div style="display: flex; align-items: baseline; justify-content: center;">
+            <span class="hero-stat-number" data-count="10">0</span><span style="font-size: 2.2rem; font-family: var(--font-display); font-weight: 700; color: var(--text-primary); margin-left: 2px;">+</span>
           </div>
           <span class="hero-stat-label">Real-World Labs</span>
         </div>
@@ -554,6 +555,140 @@
         </div>
       </div>
       <span class="section-tag-close">&lt;/projects&gt;</span>
+    </div>
+  </section>
+
+  <!-- ============ HANDS-ON LABS ============ -->
+  <section class="section" id="labs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;labs&gt;</span>
+        <h2 class="section-title glitch" data-text="Hands-On Labs">Hands-On Labs</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="labs-grid">
+        <!-- Lab 1 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🛡️</span>
+            <h3>Splunk SIEM Alert Triage</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Ingested and analyzed Windows event logs in Splunk Enterprise.</li>
+            <li>Configured custom alerts for distributed Brute Force attacks.</li>
+            <li>Created interactive dashboards for live SOC L1 monitoring.</li>
+          </ul>
+        </div>
+        <!-- Lab 2 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🦈</span>
+            <h3>Wireshark PCAP Analysis</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Inspected network packets to trace data exfiltration paths.</li>
+            <li>Identified plain-text credentials over unencrypted traffic.</li>
+            <li>Analyzed malicious payloads from a simulated reverse shell.</li>
+          </ul>
+        </div>
+        <!-- Lab 3 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🏰</span>
+            <h3>Active Directory Post-Exploitation</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Executed Kerberoasting &amp; AS-REP Roasting using Impacket.</li>
+            <li>Extracted NTDS.dit hashes via DCSync attacks.</li>
+            <li>Mapped attack paths visually using BloodHound &amp; Neo4j.</li>
+          </ul>
+        </div>
+        <!-- Lab 4 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🕸️</span>
+            <h3>Web Vulnerability Exploitation</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Intercepted request traffic using Burp Suite Professional.</li>
+            <li>Exploited blind SQL injection to bypass login authentications.</li>
+            <li>Executed stored XSS attacks to hijack session cookies.</li>
+          </ul>
+        </div>
+        <!-- Lab 5 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🗺️</span>
+            <h3>Network Attack Surface Mapping</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Conducted extensive subnet scanning using custom Nmap scripts.</li>
+            <li>Identified vulnerable rogue SSH and SMB services.</li>
+            <li>Fingerprinted OS and daemon versions for vulnerability matching.</li>
+          </ul>
+        </div>
+        <!-- Lab 6 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🔍</span>
+            <h3>OpenVAS Vulnerability Scanning</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Deployed and configured OpenVAS in a Kali Linux environment.</li>
+            <li>Automated regular authenticated scans on Windows endpoints.</li>
+            <li>Generated compliance reports mapped to CVEs and CVSS metrics.</li>
+          </ul>
+        </div>
+        <!-- Lab 7 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🚨</span>
+            <h3>Snort IDS/IPS Sig Creation</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Deployed Snort as an inline IPS to block malicious subnets.</li>
+            <li>Wrote custom detection rules for directory traversal attempts.</li>
+            <li>Parses real-time alert logs to track attacker IPs.</li>
+          </ul>
+        </div>
+        <!-- Lab 8 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">🦠</span>
+            <h3>Malware Dynamic Analysis</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Built an isolated malware sandbox using FlareVM and REMnux.</li>
+            <li>Monitored malicious PE execution using Process Hacker.</li>
+            <li>Captured post-infection IOCs including C2 traffic.</li>
+          </ul>
+        </div>
+        <!-- Lab 9 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">✉️</span>
+            <h3>Email Forensics &amp; Headers</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Tracked phishing campaigns via SPF, DKIM, and DMARC headers.</li>
+            <li>Extracted hidden routing metadata from .eml files.</li>
+            <li>Defanged attached malicious macros in an isolated environment.</li>
+          </ul>
+        </div>
+        <!-- Lab 10 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-icon">☁️</span>
+            <h3>AWS Cloud Security Audit</h3>
+          </div>
+          <ul class="lab-bullets">
+            <li>Audited cloud infrastructure using AWS CLI to locate S3 exposures.</li>
+            <li>Reviewed IAM policies to identify excessive (*) permissions.</li>
+            <li>Enforced least privilege access and enabled CloudTrail logging.</li>
+          </ul>
+        </div>
+      </div>
+      <span class="section-tag-close">&lt;/labs&gt;</span>
     </div>
   </section>
 

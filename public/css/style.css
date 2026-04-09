@@ -963,6 +963,70 @@ img { max-width: 100%; display: block; }
 .project-link svg { transition: var(--transition); }
 .project-link:hover svg { transform: translateY(-2px); }
 
+/* ---------- Hands-On Labs ---------- */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.lab-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: var(--transition);
+  overflow: hidden;
+}
+.lab-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 4px 30px rgba(0,255,204,0.06);
+  transform: translateY(-4px);
+}
+.lab-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.lab-icon {
+  font-size: 1.5rem;
+  padding: 10px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.lab-card:hover .lab-icon {
+  border-color: var(--cyan);
+  background: var(--cyan-glow);
+}
+.lab-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+.lab-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+.lab-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.lab-bullets li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
 /* ---------- Certifications ---------- */
 .certs-grid {
   display: grid;
@@ -1311,6 +1375,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .labs-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
   .edu-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1348,6 +1413,7 @@ img { max-width: 100%; display: block; }
 
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
+  .labs-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
