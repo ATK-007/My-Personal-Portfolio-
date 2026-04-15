@@ -441,6 +441,22 @@ window.addEventListener('load', () => {
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
     });
+
+  });
+})();
+
+// ==================== PROJECT CARD REDIRECT ====================
+(function initProjectRedirects() {
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if a link inside was clicked
+      if (e.target.closest('a')) return;
+      
+      const url = card.getAttribute('data-url');
+      if (url) {
+        window.open(url, '_blank');
+      }
+    });
   });
 })();
 
